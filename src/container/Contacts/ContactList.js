@@ -1,23 +1,37 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import Contact from "../../components/Contact/Contact";
+import { getAllContact } from "../../services/contactService";
 
-function ContactList() {
-  return (
-    <div>
-      <h2>Contact List</h2>
-      <div className="list-group">
-        <div className="list-group-item list-group-item-action">
-          <div className="d-flex w-100 justify-content-between">
-            <h5 className="mb-1">
-              <Link to={`/contacts/1`}>John</Link>
-            </h5>
-            <small>Contact Id: 1</small>
-          </div>
-          <p className="mb-1">John is from NZ</p>
+class ContactList extends Component {
+  componentDidMount() {
+    this.props.dispatch(getAllContact());
+    console.log(this.props);
+  }
+  render() {
+    return (
+      <div>
+        <h2>Contact List</h2>
+        <div className="list-group">
+          {this.props.vikash && this.props.vikash.length > 0 ? (
+            this.props.vikash.map(({ id, name, email }, i) => {
+              return <Contact key={i} id={id} name={name} email={email} />;
+            })
+          ) : (
+            <div className="alert alert-danger">
+              Contact Not Found. You can Add one!
+            </div>
+          )}
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
-export default ContactList;
+const mapStateToProps = (state) => {
+  return {
+    vikash: state.contactsData.contacts,
+  };
+};
+
+export default connect(mapStateToProps)(ContactList);

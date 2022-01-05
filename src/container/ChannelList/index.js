@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Channel from "../../components/Channel";
 class ChannelList extends Component {
+
+
   state = {
     tvChannelList: [
       { name: "Star Sports", info: "#1 Sports Channel", logo: "star.png" },
@@ -12,16 +14,11 @@ class ChannelList extends Component {
 
   increaseCount = () => {
     // alert("test");
-    this.setState(
-      (prev) => {
-        return {
-          number: prev.number + 10,
-        };
-      },
-      () => {
-        console.log(this.state);
-      }
-    );
+    this.setState((prev) => {
+      return {
+        number: prev.number + 10,
+      };
+    });
   };
 
   render() {
