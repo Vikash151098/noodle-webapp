@@ -9,7 +9,6 @@ import {
 let contactsData = {
   contacts: [],
   contact: {},
-  loading: false,
 };
 
 function contactReducer(state = contactsData, action) {
@@ -21,9 +20,9 @@ function contactReducer(state = contactsData, action) {
     case GET_CONTACT_BY_ID:
       return { ...state, contact: action.payload };
     case EDIT_CONTACT:
-      return state;
+      return { ...state, contact: action.payload };
     case DELETE_CONTACT:
-      return state;
+      return { ...state, contact: action.payload };
     default:
       return state;
   }
