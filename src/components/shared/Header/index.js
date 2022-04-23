@@ -6,7 +6,7 @@ const Header = function () {
   return (
     <nav className="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
       <Link className="navbar-brand" to="/">
-        Contact Manager App
+        Noodles web App
       </Link>
       <button
         className="navbar-toggler"

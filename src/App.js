@@ -1,22 +1,25 @@
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import "./App.css";
+import BrandsByCountry from "./components/Brands/BrandsByCountry";
 import Footer from "./components/shared/Footer";
 import Header from "./components/shared/Header";
-import ContactDetails from "./container/Contacts/ContactDetails";
-import About from "./routes/About";
-import Contacts from "./routes/Contacts";
 import Home from "./routes/Home";
+import { getBrands } from "./services/brandsServices";
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getBrands());
+  }, [])
   return (
     <>
       <Header />
       <main style={{ marginTop: "80px" }} className="text-center">
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
-          <Route exact path="/contacts" component={Contacts}></Route>
-          <Route path="/contacts/:id" component={ContactDetails}></Route>
+          <Route exact path="/:country" component={BrandsByCountry} />
         </Switch>
       </main>
       <Footer />

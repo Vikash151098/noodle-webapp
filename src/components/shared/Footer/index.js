@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="text-center">
       <hr />
       <Menu />
-      <p>Copyright &copy; {new Date().getFullYear()} | Tata Elxsi</p>
+      <p>Copyright &copy; {new Date().getFullYear()}</p>
     </footer>
   );
 };

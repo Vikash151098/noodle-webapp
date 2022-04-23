@@ -1,10 +1,11 @@
 import { combineReducers } from "redux";
-import contactReducer from "./contactReducer";
-import userReducer from "./userReducer";
+import brandReducer from "./brandReducer";
+import imageReducer from "./imageReducer";
 
 const rootReducer = combineReducers({
-  contactsData: contactReducer,
-  usersData: userReducer,
+  brandData: brandReducer,
+  imageData: imageReducer,
+
 });
 
 export default rootReducer;

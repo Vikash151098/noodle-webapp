@@ -1,5 +1,7 @@
-export const ADD_CONTACT = "ADD_CONTACT";
-export const GET_CONTACT = "GET_CONTACT";
-export const GET_CONTACT_BY_ID = "GET_CONTACT_BY_ID";
-export const EDIT_CONTACT = "EDIT_CONTACT";
-export const DELETE_CONTACT = "DELETE_CONTACT";
+
+export const GET_BRANDS = "GET_BRANDS";
+export const ADD_MORE_BRANDS = "ADD_MORE_BRANDS";
+export const GET_IMAGE = "GET_IMAGE";
+
+
+
