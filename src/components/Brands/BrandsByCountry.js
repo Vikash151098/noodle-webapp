@@ -8,17 +8,17 @@ const Card = React.lazy(() => import('./Card'));
 function BrandsByCountry() {
     const { country } = useParams();
     const dispatch = useDispatch();
-    const brand = useSelector(state => state.brandData);
+    const brand = useSelector(state => state.brandData.brands);
     const images = useSelector(state => state.imageData);
     const brands = brand.filter(item => item.Country === country)
 
     useEffect(() => {
         dispatch(getAllImage())
-    }, [])
+    }, [dispatch])
     return (
         <div className='row'>
             <Suspense fallback={<div>Loading...</div>}>
-                {brands.length > 0 && images.length && brands.map(item => <Card images={images} brand={item.Brand} />)}
+                {brands.length > 0 && images.length && brands.map((item, i) => <Card key={i} images={images} brand={item.Brand} />)}
             </Suspense>
         </div>
     )

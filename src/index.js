@@ -22,7 +22,7 @@ ReactDOM.render(
 
 
 // import React, { useCallback, useState } from 'react';
-// import { createRoot } from 'react-dom/client';
+// import ReactDOM from "react-dom";
 // import InfiniteScroll from 'react-infinite-scroller';
 // import parseLinkHeader from 'parse-link-header';
 
@@ -44,6 +44,7 @@ ReactDOM.render(
 // }
 
 // const App = () => {
+//   debugger;
 //   const [items, setItems] = useState([]);
 //   const [nextPageUrl, setNextPageUrl] = useState(
 //     'https://api.github.com/repos/facebook/react/issues'
@@ -104,9 +105,6 @@ ReactDOM.render(
 
 // ReactDOM.render(<App />,document.getElementById('root'));
 
-
-
-// ReactDOM.render(<Clock />, document.getElementById("root"));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

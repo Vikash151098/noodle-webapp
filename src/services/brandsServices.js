@@ -2,7 +2,8 @@ import axios from "axios";
 import {
     GET_BRANDS,
     ADD_MORE_BRANDS,
-    GET_IMAGE
+    GET_IMAGE,
+    GET_UNIQUE_BRANDS
 } from "../actions/types";
 const brandsApi = "https://s3-ap-southeast-1.amazonaws.com/he-public-data/TopRamen8d30951.json";
 const imageApi = "https://s3-ap-southeast-1.amazonaws.com/he-public-data/noodlesec253ad.json";
@@ -26,6 +27,14 @@ export const getBrands = () => {
             });
     };
 };
+
+export const getUniqueBrands = () => {
+    return (dispatch) => {
+        return dispatch({
+            type: GET_UNIQUE_BRANDS,
+        });
+    }
+}
 
 export const addMore = (data) => {
     return (dispatch) => {
